@@ -1,1 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scrubb.it – Metadata Scrubber Extension</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      background: #f8f9fc;
+      color: #064663;
+    }
+    header {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #e0f5ff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+    }
+    header .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #064663;
+    }
+    header nav a {
+      margin-left: 20px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .hero {
+      padding: 120px 40px;
+      text-align: center;
+      background: #9fd7f6;
+      color: #215354;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.85;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .hero button {
+      margin-top: 30px;
+      background: #ffd43b;
+      color: #064663;
+      padding: 14px 34px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+    .hero button:hover {
+      background: #ffca2b;
+      transform: translateY(-2px);
+    }
+    .section {
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .feature {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .feature h3 {
+      margin-top: 0;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    .footer {
+      padding: 40px;
+      text-align: center;
+      background: #064663;
+      color: white;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
 
+<header>
+  <div class="logo"><img src="scrubb.it_logo-removebg-preview.png" alt="Scrubb.it logo" style="height:100px; vertical-align:middle; margin: -20px;"> </div>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#how">How It Works</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#support">Support</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Protect Your Privacy Automatically</h1>
+  <p>Scrubb.it removes hidden EXIF metadata from your images before upload — no extra steps required. Keep your location, device details, and identity private.</p>
+  <button>Download Extension</button>
+</section>
+
+<section id="features" class="section">
+  <h2>Features</h2>
+  <div class="features-grid">
+    <div class="feature">
+      <h3>Automatic Cleaning</h3>
+      <p>Metadata is removed behind the scenes whenever you upload an image.</p>
+    </div>
+    <div class="feature">
+      <h3>Works Everywhere</h3>
+      <p>Compatible with all websites, social platforms, and file upload fields.</p>
+    </div>
+    <div class="feature">
+      <h3>Preserves Quality</h3>
+      <p>Your images stay sharp — only the metadata is removed.</p>
+    </div>
+    <div class="feature">
+      <h3>Toast Notifications</h3>
+      <p>Get instant visual confirmation when a file is successfully cleaned.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="section">
+  <h2>How It Works</h2>
+  <p>
+    Scrubb.it silently intercepts image uploads in your browser. The extension redraws the image via the Canvas API, which strips all EXIF metadata such as GPS coordinates, timestamps, device info, and more. The cleaned image is then passed to the website automatically.
+  </p>
+</section>
+
+<section id="privacy" class="section">
+  <h2>Privacy</h2>
+  <p>
+    Scrubb.it runs entirely in your browser — no image ever leaves your device. All metadata is removed locally, ensuring full privacy and security.
+  </p>
+</section>
+
+<section id="support" class="section">
+  <h2>Support</h2>
+  <p>
+    Having issues? Check our documentation or reach out to the team.
+  </p>
+</section>
+
+<div class="footer">
+  © 2025 Scrubb.it — Metadata Scrubber Extension
+</div>
+
+</body>
+</html>
