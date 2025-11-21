@@ -8,19 +8,24 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       background: #f8f9fc;
       color: #064663;
+      text-align: center;
+
     }
     header {
       padding: 20px 40px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      gap: 40px;
       background: #e0f5ff;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       position: sticky;
       top: 0;
+      font-variant: small-caps;
+      box-shadow: bottom 10px 10px 10px 10px #ffc61d;
     }
     header .logo {
       font-size: 1.6rem;
@@ -32,12 +37,13 @@
       color: #333;
       text-decoration: none;
       font-weight: 500;
+      font-variant: normal;
     }
     .hero {
       padding: 120px 40px;
       text-align: center;
       background: #9fd7f6;
-      color: #215354;
+      color: #064663;
     }
     .hero h1 {
       font-size: 3rem;
@@ -75,11 +81,19 @@
       font-size: 2.2rem;
       margin-bottom: 20px;
     }
+
+    .section p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      opacity: 0.9;
+      margin-bottom: -50px;
+    }
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 24px;
       margin-top: 40px;
+
     }
     .feature {
       background: white;
@@ -92,6 +106,13 @@
       font-size: 1.3rem;
       font-weight: 600;
     }
+
+    .feature p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      margin-bottom: 0px;
+      text-align: center;
+    }
     .footer {
       padding: 40px;
       text-align: center;
@@ -103,8 +124,14 @@
 </head>
 <body>
 
-<header>
-  <div class="logo"><img src="scrubb.it_logo-removebg-preview.png" alt="Scrubb.it logo" style="height:100px; vertical-align:middle; margin: -20px;"> </div>
+<header style="display:flex; justify-content:space-between; align-items:center;">
+  <img src="scrubb.it_logo-removebg-preview.png" alt="Scrubb.it logo" style="height:100px; margin: -20px;">
+
+  <div style="position:absolute; left:50%; transform:translateX(-50%); font-size:2.8rem; font-weight:500; background: linear-gradient(90deg, #336880, #5fa6c5, #dbb542e7); -webkit-background-clip:text; color:transparent; 
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; white-space:nowrap;">
+    Scrubb.it
+  </div>
+
   <nav>
     <a href="#features">Features</a>
     <a href="#how">How It Works</a>
