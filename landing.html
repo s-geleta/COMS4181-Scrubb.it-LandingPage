@@ -3,134 +3,177 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Scrubb.it – Metadata Scrubber Extension</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
   <style>
+    :root {
+      --primary: #3B82F6;
+      --primary-hover: #1E40AF;
+      --secondary: #60A5FA;
+      --surface: #DBEAFE;
+      --focus: #93C5FD;
+
+      --success: #10B981;
+      --success-dark: #059669;
+
+      --bg: #F9FAFB;
+      --white: #FFFFFF;
+      --text-main: #1F2937;
+      --text-sub: #4B5563;
+      --border: #E5E7EB;
+    }
+
     body {
       margin: 0;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      background: #f8f9fc;
-      color: #064663;
-      text-align: center;
-
+      background: var(--bg);
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      color: var(--text-main);
     }
+
+    /* HEADER */
     header {
-      padding: 20px 40px;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 40px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      gap: 40px;
-      background: #e0f5ff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       position: sticky;
       top: 0;
-      font-variant: small-caps;
-      box-shadow: bottom 10px 10px 10px 10px #ffc61d;
+      z-index: 20;
     }
-    header .logo {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #064663;
-    }
-    header nav a {
-      margin-left: 20px;
-      color: #333;
+
+    nav a {
+      margin-left: 24px;
       text-decoration: none;
-      font-weight: 500;
-      font-variant: normal;
-    }
-    .hero {
-      padding: 120px 40px;
-      text-align: center;
-      background: #9fd7f6;
-      color: #064663;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      opacity: 0.85;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .hero button {
-      margin-top: 30px;
-      background: #ffd43b;
-      color: #064663;
-      padding: 14px 34px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.1rem;
       font-weight: 600;
-      cursor: pointer;
+      color: var(--text-sub);
       transition: 0.2s ease;
     }
+
+    nav a:hover {
+      color: var(--primary-hover);
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--surface);
+      padding: 120px 40px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--primary-hover);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+
+    .hero button {
+      margin-top: 34px;
+      background: var(--primary);
+      color: white;
+      padding: 14px 40px;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      transition: 0.25s ease;
+      box-shadow: 0 4px 12px rgba(59,130,246,0.24);
+    }
+
     .hero button:hover {
-      background: #ffca2b;
+      background: var(--primary-hover);
       transform: translateY(-2px);
     }
+
+    /* SECTIONS */
     .section {
       padding: 80px 40px;
       max-width: 1100px;
       margin: 0 auto;
+      text-align: center;
     }
+
     .section h2 {
-      font-size: 2.2rem;
+      font-size: 2.3rem;
+      font-weight: 700;
       margin-bottom: 20px;
+      color: var(--text-main);
     }
 
     .section p {
-      font-size: 1.3rem;
-      line-height: 1.6;
-      opacity: 0.9;
-      margin-bottom: -50px;
+      max-width: 780px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: var(--text-sub);
+      line-height: 1.7;
     }
+
+    /* FEATURES GRID */
     .features-grid {
+      margin-top: 50px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-
+      gap: 26px;
     }
+
     .feature {
       background: white;
-      border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 26px;
+      text-align: left;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
     }
+
     .feature h3 {
+      color: var(--primary-hover);
       margin-top: 0;
       font-size: 1.3rem;
       font-weight: 600;
+      margin-bottom: 10px;
     }
 
     .feature p {
       font-size: 1.1rem;
-      opacity: 0.85;
-      margin-bottom: 0px;
-      text-align: center;
+      color: var(--text-sub);
+      line-height: 1.5;
     }
+
+    /* FOOTER */
     .footer {
+      margin-top: 80px;
+      background: var(--primary-hover);
+      color: white;
       padding: 40px;
       text-align: center;
-      background: #064663;
-      color: white;
-      margin-top: 60px;
+      font-size: 1rem;
+      letter-spacing: 0.2px;
     }
   </style>
 </head>
 <body>
 
-<header style="display:flex; justify-content:space-between; align-items:center;">
-  <img src="https://ik.imagekit.io/hhhxw0470/scrubb.it_logo-removebg-preview.png" alt="Scrubb.it logo" style="height:100px; margin: -20px;">
+<header>
 
-  <div style="position:absolute; left:50%; transform:translateX(-50%); font-size:2.8rem; font-weight:500; background: linear-gradient(90deg, #336880, #5fa6c5, #dbb542e7); -webkit-background-clip:text; color:transparent; 
+
+  <div style="position:absolute; left:50%; transform:translateX(-50%); font-size:2.8rem; font-weight:500; background: linear-gradient(90deg, #0b1f40 , #3B82F6 , #dbb542e7); -webkit-background-clip:text; color:transparent;
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; white-space:nowrap;">
     Scrubb.it
   </div>
+
+  <img src="https://ik.imagekit.io/hhhxw0470/scrubb.it%20logo%20(2)-Photoroom.png" alt="Scrubb.it logo" style="height:100px; margin-bottom: -20px; margin-top: -15px;">
 
   <nav>
     <a href="#features">Features</a>
@@ -142,51 +185,46 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; white-sp
 
 <section class="hero">
   <h1>Protect Your Privacy Automatically</h1>
-  <p>Scrubb.it removes hidden EXIF metadata from your images before upload — no extra steps required. Keep your location, device details, and identity private.</p>
+  <p>Scrubb.it removes hidden EXIF metadata before any site receives your image — keeping your location, device details, and identity safe.</p>
   <button>Download Extension</button>
 </section>
 
-<section id="features" class="section">
+<section class="section" id="features">
   <h2>Features</h2>
+
   <div class="features-grid">
     <div class="feature">
       <h3>Automatic Cleaning</h3>
-      <p>Metadata is removed behind the scenes whenever you upload an image.</p>
+      <p>Removes metadata silently during uploads — no extra steps.</p>
     </div>
     <div class="feature">
       <h3>Works Everywhere</h3>
-      <p>Compatible with all websites, social platforms, and file upload fields.</p>
+      <p>Compatible with all websites and file inputs.</p>
     </div>
     <div class="feature">
-      <h3>Preserves Quality</h3>
-      <p>Your images stay sharp — only the metadata is removed.</p>
+      <h3>Preserves Image Quality</h3>
+      <p>Only invisible metadata is removed — pixels remain untouched.</p>
     </div>
     <div class="feature">
-      <h3>Toast Notifications</h3>
-      <p>Get instant visual confirmation when a file is successfully cleaned.</p>
+      <h3>Smart Notifications</h3>
+      <p>Subtle toasts confirm your file has been cleaned.</p>
     </div>
   </div>
 </section>
 
-<section id="how" class="section">
+<section class="section" id="how">
   <h2>How It Works</h2>
-  <p>
-    Scrubb.it silently intercepts image uploads in your browser. The extension redraws the image via the Canvas API, which strips all EXIF metadata such as GPS coordinates, timestamps, device info, and more. The cleaned image is then passed to the website automatically.
-  </p>
+  <p>Scrubb.it intercepts the upload, redraws the image in Canvas to strip EXIF data locally, and passes a clean version back to the site — without ever leaving your device.</p>
 </section>
 
-<section id="privacy" class="section">
+<section class="section" id="privacy">
   <h2>Privacy</h2>
-  <p>
-    Scrubb.it runs entirely in your browser — no image ever leaves your device. All metadata is removed locally, ensuring full privacy and security.
-  </p>
+  <p>No cloud. No tracking. No telemetry. Scrubb.it processes everything directly in your browser.</p>
 </section>
 
-<section id="support" class="section">
+<section class="section" id="support">
   <h2>Support</h2>
-  <p>
-    Having issues? Check our documentation or reach out to the team.
-  </p>
+  <p>Questions? Check our documentation or contact support anytime.</p>
 </section>
 
 <div class="footer">
